@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lwc-innowacja.iml" filepath="$PROJECT_DIR$/lwc-innowacja.iml" />
+      <module fileurl="file://$PROJECT_DIR$/innowacja-lwc.iml" filepath="$PROJECT_DIR$/innowacja-lwc.iml" />
     </modules>
   </component>
 </project>
