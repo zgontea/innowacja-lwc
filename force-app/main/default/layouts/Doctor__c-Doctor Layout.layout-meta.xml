@@ -53,13 +53,6 @@
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>OBJECT_ID</fields>
-        <fields>Birth_Date__c</fields>
-        <fields>Phone__c</fields>
-        <relatedList>Patient__c.Doctor__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
