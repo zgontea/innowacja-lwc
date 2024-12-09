@@ -4,10 +4,9 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
-          <option name="connectionName" value="innowacja" />
+          <option name="connectionName" value="innowacja-lwc" />
           <option name="connectionType" value="OAUTH" />
-          <option name="defaultModuleName" value="lwc-innowacja" />
-          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/innowacja/OfflineSymbolTable.zip" />
+          <option name="defaultModuleName" value="innowacja-lwc" />
         </IlluminatedCloudConnection>
       </list>
     </option>

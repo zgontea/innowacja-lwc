@@ -5,8 +5,8 @@
       "default": true
     }
   ],
-  "name": "lwc-innowacja",
+  "name": "innowacja-lwc",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "59.0"
+  "sourceApiVersion": "62.0"
 }
