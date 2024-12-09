@@ -46,7 +46,7 @@ $RECYCLE.BIN/
 
 # Added by Illuminated Cloud
 .idea/*
-/IlluminatedCloud/*
+/IlluminatedCloud/
 /out/
 target/
 
