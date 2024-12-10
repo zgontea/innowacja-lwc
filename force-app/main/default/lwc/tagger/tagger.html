@@ -4,8 +4,9 @@
 
 <!-- Tagger -->
 <template>
-    <lightning-card  title="Tags">
+    <lightning-card title="Tags">
         <lightning-button label="Add Tag" slot="actions" onclick={handleAddTag}></lightning-button>
+        <lightning-button label="Save Tags" slot="actions" onclick={handleSaveTags}></lightning-button>
         <div class="slds-m-horizontal_small slds-m-bottom_medium">
             <lightning-input type="text" value={tagName} label="Tag Name" onchange={handleTagNameChange}></lightning-input>
             <lightning-combobox
@@ -15,11 +16,10 @@
                     onchange={handleTagColorChange}>
             </lightning-combobox>
         </div>
-        <template lwc:if={tags} for:each={tags} for:item="tag">
+        <template for:each={tags} for:item="tag">
             <span key={tag.id} class="slds-m-horizontal_small slds-m-top_small">
                 <c-tag tag-id={tag.id} name={tag.name} color={tag.color} onremovetag={handleRemoveTag}></c-tag>
             </span>
         </template>
-        <lightning-button label="Save Tags" slot="footer" onclick={handleSaveTags}></lightning-button>
     </lightning-card>
 </template>

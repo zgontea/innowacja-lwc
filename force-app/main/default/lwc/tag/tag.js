@@ -9,7 +9,9 @@ export default class Tag extends LightningElement {
     @api name;
     @api color;
 
-    handleRemoveTag(event) {
-        this.dispatchEvent(new CustomEvent('removetag'));
+    handleRemoveTag() {
+        this.dispatchEvent(new CustomEvent('removetag', { detail:
+                { tagId: this.tagId }
+        }));
     }
 }

@@ -3,11 +3,11 @@
  */
 
 import {api, LightningElement, track, wire} from 'lwc';
-
-import TAG_FIELD from '@salesforce/schema/Doctor__c.Tags__c';
+import { getRecord } from "lightning/uiRecordApi";
 
 import saveTags from '@salesforce/apex/TagController.saveTags';
-import {getRecord} from "lightning/uiRecordApi";
+
+import TAG_FIELD from '@salesforce/schema/Doctor__c.Tags__c';
 
 export default class Tagger extends LightningElement {
     @api recordId;
@@ -27,31 +27,33 @@ export default class Tagger extends LightningElement {
 
     get tagColors() {
         return [
-            {label: 'Red', value: 'slds-badge slds-theme_error'},
-            {label: 'Green', value: 'slds-badge slds-theme_success'}
+            {label: 'Red', value: 'slds-theme_error'},
+            {label: 'Green', value: 'slds-theme_success'},
+            {label: 'Yellow', value: 'slds-theme_warning'}
         ]
     }
 
     handleTagNameChange(event) {
         this.tagName = event.target.value;
-        console.log(event.target.value);
     }
 
     handleTagColorChange(event) {
         this.tagColor = event.detail.value;
-        console.log(event.detail.value);
     }
 
     handleAddTag() {
-        let tagId = this.tagName + '_' + this.tagColor;
         let tag = {
-            id: tagId,
+            id: this.tagName + '_' + this.tagColor,
             name: this.tagName,
             color: this.tagColor
         }
 
+        if (this.tags.find(existingTag => existingTag.id === tag.id)) {
+            console.error('Tag already exists')
+            return;
+        }
+
         this.tags.push(tag);
-        console.log(JSON.stringify(this.tags));
     }
 
     handleSaveTags() {
@@ -65,9 +67,6 @@ export default class Tagger extends LightningElement {
     }
 
     handleRemoveTag(event) {
-        let id = event.target.tagId;
-        console.log(id);
-
-        this.tags = this.tags.filter((tag) => tag.id !== id);
+        this.tags = this.tags.filter((tag) => tag.id !== event.detail.tagId);
     }
 }
